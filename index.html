@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abiraj Kafle :: Coming Soon</title>
+    <meta name="description" content="Official website of Abiraj Kafle.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <span class="mode-wrapper">
+            <span class="mode">
+                <span class="fa fa-sun" id="icon"></span>
+            </span>
+        </span>
+        <div class="title">
+            Coming Soon<span>.</span>
+        </div>
+        <!-- <form action="#" class="form">
+            <div class="email-field">
+                <input type="email" placeholder="Enter Email Address" required>
+                <button type="submit" class="btn theme-btn-1 btn-effect-1">Subscribe</button>
+            </div>
+        </form> -->
+        <div class="count-down">
+            <div class="timer day">
+                <div class="count">
+                    <div class="numb">
+                        00
+                    </div>
+                    <div class="text">
+                        Days
+                    </div>
+                </div>
+            </div>
+            <div class="clone">
+                :
+            </div>
+            <div class="timer hour">
+                <div class="count">
+                    <div class="numb">
+                        00
+                    </div>
+                    <div class="text">
+                        Hours
+                    </div>
+                </div>
+            </div>
+            <div class="clone">
+                :
+            </div>
+            <div class="timer min">
+                <div class="count">
+                    <div class="numb">
+                        00
+                    </div>
+                    <div class="text">
+                        Minutes
+                    </div>
+                </div>
+            </div>
+            <div class="clone">
+                :
+            </div>
+            <div class="timer sec">
+                <div class="count">
+                    <div class="numb">
+                        00
+                    </div>
+                    <div class="text">
+                        Seconds
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="icons">
+        <a href="https://www.facebook.com/abikoraj" target="_blank">
+            <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fab fa-facebook-f"></span>
+            </div>
+            <div class="text">
+                Facebook
+            </div>
+        </a>
+        <a href="https://twitter.com/abikoraj" target="_blank">
+            <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fab fa-twitter"></span>
+            </div>
+            <div class="text">
+                Twitter
+            </div>
+        </a>
+        <a href="https://github.com/abikoraj" target="_blank">
+            <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fab fa-github"></span>
+            </div>
+            <div class="text">
+                GitHub
+            </div>
+        </a>
+        <a href="https://www.linkedin.com/in/abikoraj" target="_blank">
+            <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fab fa-linkedin-in"></span>
+            </div>
+            <div class="text">
+                LinkedIn
+            </div>
+        </a>
+        <a href="https://www.youtube.com/channel/UCQSKtBDTypltCQ9t998MDkA" target="_blank">
+            <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fab fa-youtube"></span>
+            </div>
+            <div class="text">
+                YouTube
+            </div>
+        </a>
+    </div>
+    <script>
+        var icon = document.getElementById("icon");
+        icon.onclick = function () {
+            document.body.classList.toggle("dark-theme");
+            if (document.body.classList.contains("dark-theme")) {
+                icon.className = "fas fa-moon";
+            } else {
+                icon.className = "fa fa-sun";
+            }
+        }
+    </script>
+    <script>
+        const day = document.querySelector(".day .numb");
+        const hour = document.querySelector(".hour .numb");
+        const min = document.querySelector(".min .numb");
+        const sec = document.querySelector(".sec .numb");
+        var timer = setInterval(() => {
+            var currentDate = new Date().getTime();
+            var launchDate = new Date('July 29, 2023 13:00:00').getTime();
+            var duration = launchDate - currentDate;
+            var days = Math.floor(duration / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((duration % (1000 * 60)) / 1000);
+            day.innerHTML = days;
+            hour.innerHTML = hours;
+            min.innerHTML = minutes;
+            sec.innerHTML = seconds;
+            if (days < 10) {
+                day.innerHTML = '0' + days;
+            }
+            if (hours < 10) {
+                hour.innerHTML = '0' + hours;
+            }
+            if (minutes < 10) {
+                min.innerHTML = '0' + minutes;
+            }
+            if (seconds < 10) {
+                sec.innerHTML = '0' + seconds;
+            }
+            if (duration < 0) {
+                clearInterval(timer);
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
